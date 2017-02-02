@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html>
-        <head>
-                <title>Parse JSON Feed using While</title>
-                <script type="text/javascript" src="data.json"></script> 
-                <script type="text/javascript">
+	<head>
+		<meta charset="utf-8" />
+		<title>Parse JSON Feed using While</title>
+		<script type="text/javascript" src="data.js"></script>
+		<script type="text/javascript">
 
-                        for(var i in data_json){
+			for(var i in data_json){
 
-                                var data = data_json[i];
-                                if(data.titles instanceof Array){
-                                        var titles = "";
-                                        for(var j in data.titles){
+				var data = data_json[i];
+				if(data.titles instanceof Array){
+					var titles = "";
 
-                                                titles += data.titles[j].title + " & ";
+					for(var j in data.titles){
 
+						titles += data.titles[j].title + " & ";
 
-                                        }
+					}
+					titles = titles.slice(0, titles.length-3);
 
-                                        titles = titles.slice(0, titles.length-3);
-                                        console.log("Employee "+ data.emp_no +" has served as "+titles);
-                                }
-                                else{
-                                        var title = data.titles.title;
-                                        console.log("Employee "+ data.emp_no +" has served as "+title);
-                                }
-                        }
+					console.log("Employee "+ data.emp_no +" has served as "+titles);
 
-                </script>
-        </head>
-        <body>
-                <h2>Parse JSON Feed using While</h2>
-                <p>This is a test program to learn how external JSON 
-                feed stored in files can be parsed using the While Loop.</p>
-        </body>
+				}else{
+
+					var title = data.titles.title;
+
+					console.log("Employee "+ data.emp_no +" has served as "+title);
+
+				}
+			}
+
+		</script>
+	</head>
+	<body>
+	<h2>Parse JSON Feed using While</h2>
+	<p>This is a test program to learn how external JSON
+	feed stored in files can be parsed using the While Loop.</p>
+	</body>
 </html>

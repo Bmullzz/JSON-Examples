@@ -1,4 +1,4 @@
-var data_json = [
+[
     {
         "emp_no": "10001",
         "birth_date": "1953-09-02",
